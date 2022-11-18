@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 // implicit animation
@@ -7,23 +9,39 @@ class animate8 extends StatefulWidget {
 }
 
 class _animate8State extends State<animate8> {
-  late final double _width, _height;
-  late final Color _color;
+  double _width = 200;
+  double _height = 150;
+  Color _color = Colors.red;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: AnimatedContainer(
-          width: 200,
-          height: 200,
-          color: Colors.red,
+          width: _width,
+          height: _height,
+          color: _color,
           duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOutCubic,
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        onPressed: _update,
         child: const Icon(Icons.play_arrow),
-        onPressed: () {},
       ),
     );
+  }
+
+  final random = Random();
+  void _update() {
+    setState(() {
+      _width = random.nextInt(300).toDouble();
+      _height = random.nextInt(300).toDouble();
+      _color = Color.fromRGBO(
+        random.nextInt(128),
+        random.nextInt(128),
+        random.nextInt(128),
+        1,
+      );
+    });
   }
 }
