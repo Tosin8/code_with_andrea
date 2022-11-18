@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: animate8(),
+      home: const TweenAnimationBuilderPage(),
     );
   }
 }

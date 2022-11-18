@@ -60,7 +60,14 @@ class _TweenAnimationBuilderPageState extends State<TweenAnimationBuilderPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Column()),
+      body: Center(
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+        Container(
+          width: 40,
+          height: 40,
+          color: Colors.red,
+        ),
+      ])),
     );
   }
 }
