@@ -48,6 +48,8 @@ class _animate8State extends State<animate8> {
 
 // TWEEN - INBETWEEN, USING TWEEN ANIMATION BUILDER TO CUSTOMIZE IMPLICIT ANIMATION.
 
+// BUILT-IN TWEEN CLASSES ARE: COLORTWEEN, SIZETWEEN, FRACTIONALOFFSETTWEEN.
+
 class TweenAnimationBuilderPage extends StatefulWidget {
   const TweenAnimationBuilderPage({super.key});
 
