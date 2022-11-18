@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-// implicit animation
+// IMPLICIT ANIMATION
 class animate8 extends StatefulWidget {
   @override
   State<animate8> createState() => _animate8State();
@@ -43,5 +43,24 @@ class _animate8State extends State<animate8> {
         1,
       );
     });
+  }
+}
+
+// TWEEN - INBETWEEN, USING TWEEN ANIMATION BUILDER TO CUSTOMIZE IMPLICIT ANIMATION.
+
+class TweenAnimationBuilderPage extends StatefulWidget {
+  const TweenAnimationBuilderPage({super.key});
+
+  @override
+  State<TweenAnimationBuilderPage> createState() =>
+      _TweenAnimationBuilderPageState();
+}
+
+class _TweenAnimationBuilderPageState extends State<TweenAnimationBuilderPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(child: Column()),
+    );
   }
 }
