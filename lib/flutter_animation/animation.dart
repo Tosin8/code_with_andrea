@@ -57,17 +57,40 @@ class TweenAnimationBuilderPage extends StatefulWidget {
 }
 
 class _TweenAnimationBuilderPageState extends State<TweenAnimationBuilderPage> {
+  late double _value = 0.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: Column(mainAxisSize: MainAxisSize.min, children: [
-        Container(
-          width: 40,
-          height: 40,
-          color: Colors.red,
-        ),
-      ])),
-    );
+        body: Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          TweenAnimationBuilder<double>(
+            duration: const Duration(milliseconds: 500),
+            tween: Tween(begin: 0.0, end: _value),
+            child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.red,
+            ),
+            builder: (context, value, child) {
+              return Transform.translate(
+                offset: Offset(value * 200 - 100, 0),
+                child: child,
+              );
+            },
+          ),
+          SizedBox(
+            width: 300,
+            child: Slider.adaptive(
+              value: _value,
+              onChanged: (value) => setState(() {
+                _value = value;
+              }),
+            ),
+          ),
+        ],
+      ),
+    ));
   }
 }
