@@ -107,16 +107,38 @@ class RotationTransitionPage extends StatefulWidget {
 
 class _RotationTransitionPageState extends State<RotationTransitionPage>
     with SingleTickerProviderStateMixin {
-  late final _animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 500), 
+  late final _animationController = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 500),
   );
+
+  @override
+  void initState() {
+    _animationController.forward();
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-            child: Container(
-      width: 100,
-      height: 100,
-      color: Colors.red,
-    )));
+      child: AnimatedBuilder(
+        animation: _animationController,
+        child: Container(width: 180, height: 180, color: Colors.red),
+        builder: (context, child) {
+          return Transform.rotate(
+            angle: 0.5 * pi * _animationController.value,
+            child: child,
+          );
+        },
+      ),
+    ));
   }
 }
