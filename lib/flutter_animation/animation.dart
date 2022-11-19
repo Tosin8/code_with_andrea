@@ -108,6 +108,13 @@ class RotationTransitionPage extends StatefulWidget {
 class _RotationTransitionPageState extends State<RotationTransitionPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child: Container(
+          width: 100, 
+          height: 100,color: Colors.red, 
+        )
+      )
+    );
   }
 }
