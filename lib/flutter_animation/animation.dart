@@ -96,3 +96,6 @@ class _TweenAnimationBuilderPageState extends State<TweenAnimationBuilderPage> {
     ));
   }
 }
+
+//USING ANIMATION CONTROLLER
+stful
