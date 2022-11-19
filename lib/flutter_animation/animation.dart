@@ -105,16 +105,18 @@ class RotationTransitionPage extends StatefulWidget {
   State<RotationTransitionPage> createState() => _RotationTransitionPageState();
 }
 
-class _RotationTransitionPageState extends State<RotationTransitionPage> {
+class _RotationTransitionPageState extends State<RotationTransitionPage>
+    with SingleTickerProviderStateMixin {
+  late final _animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 500), 
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          width: 100, 
-          height: 100,color: Colors.red, 
-        )
-      )
-    );
+        body: Center(
+            child: Container(
+      width: 100,
+      height: 100,
+      color: Colors.red,
+    )));
   }
 }
