@@ -98,4 +98,16 @@ class _TweenAnimationBuilderPageState extends State<TweenAnimationBuilderPage> {
 }
 
 //USING ANIMATION CONTROLLER
-stful
+class RotationTransitionPage extends StatefulWidget {
+  const RotationTransitionPage({super.key});
+
+  @override
+  State<RotationTransitionPage> createState() => _RotationTransitionPageState();
+}
+
+class _RotationTransitionPageState extends State<RotationTransitionPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
